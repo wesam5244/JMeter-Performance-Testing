@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="HLS Stream Test" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="High Resolution " enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">2</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.blazemeter.jmeter.hls.logic.HlsSampler guiclass="com.blazemeter.jmeter.hls.gui.HlsSamplerGui" testclass="com.blazemeter.jmeter.hls.logic.HlsSampler" testname="High - Sampler" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HLS.URL_DATA">https://hls.demoblaze.com/index.m3u8</stringProp>
+          <boolProp name="HLS.DURATION">true</boolProp>
+          <stringProp name="HLS.SECONDS_DATA">10</stringProp>
+          <stringProp name="HLS.AUDIO_LANGUAGE"></stringProp>
+          <stringProp name="HLS.SUBTITLE_LANGUAGE"></stringProp>
+          <stringProp name="HLS.BANDWIDTH_TYPE">maxBandwidth</stringProp>
+          <stringProp name="HLS.NET_DATA"></stringProp>
+          <stringProp name="HLS.RESOLUTION_TYPE">maxResolution</stringProp>
+          <stringProp name="HLS.RES_DATA"></stringProp>
+          <boolProp name="HLS.RESUME_DOWNLOAD">false</boolProp>
+        </com.blazemeter.jmeter.hls.logic.HlsSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="High - Media Playlist" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="2110213426">#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-ALLOW-CACHE:YES
+#EXT-X-TARGETDURATION:13
+#EXTINF:12.066667,
+about_demo_hls_2M00000.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00001.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00002.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00003.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00004.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00005.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00006.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00007.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00008.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00009.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00010.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00011.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00012.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00013.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00014.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00015.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00016.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00017.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00018.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00019.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00020.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00021.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00022.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00023.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00024.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00025.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00026.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00027.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00028.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00029.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00030.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00031.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00032.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00033.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00034.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00035.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00036.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00037.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00038.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00039.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00040.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00041.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00042.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00043.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00044.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00045.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00046.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00047.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00048.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00049.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00050.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00051.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00052.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00053.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00054.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00055.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00056.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00057.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00058.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00059.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00060.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00061.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00062.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00063.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00064.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00065.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00066.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00067.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00068.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00069.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00070.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00071.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00072.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00073.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00074.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00075.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00076.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00077.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00078.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00079.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00080.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00081.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00082.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00083.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00084.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00085.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00086.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00087.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00088.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00089.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00090.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00091.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00092.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00093.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00094.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00095.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00096.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00097.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00098.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00099.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00100.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00101.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00102.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00103.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00104.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00105.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00106.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00107.ts
+#EXTINF:12.000000,
+about_demo_hls_2M00108.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00109.ts
+#EXTINF:9.000000,
+about_demo_hls_2M00110.ts
+#EXTINF:10.133333,
+about_demo_hls_2M00111.ts
+#EXT-X-ENDLIST
+</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="High - Media Segment" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1258581824">GET https://hls.demoblaze.com/about_demo_hls_2M</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.request_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+          <collectionProp name="Asserion.test_strings"/>
+          <stringProp name="Assertion.custom_message"></stringProp>
+          <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">16</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Low Resolution" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">2</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.blazemeter.jmeter.hls.logic.HlsSampler guiclass="com.blazemeter.jmeter.hls.gui.HlsSamplerGui" testclass="com.blazemeter.jmeter.hls.logic.HlsSampler" testname="Low - Sampler" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HLS.URL_DATA">https://hls.demoblaze.com/index.m3u8</stringProp>
+          <boolProp name="HLS.DURATION">true</boolProp>
+          <stringProp name="HLS.SECONDS_DATA">10</stringProp>
+          <stringProp name="HLS.AUDIO_LANGUAGE"></stringProp>
+          <stringProp name="HLS.SUBTITLE_LANGUAGE"></stringProp>
+          <stringProp name="HLS.BANDWIDTH_TYPE">minBandwidth</stringProp>
+          <stringProp name="HLS.NET_DATA"></stringProp>
+          <stringProp name="HLS.RESOLUTION_TYPE">minResolution</stringProp>
+          <stringProp name="HLS.RES_DATA"></stringProp>
+          <boolProp name="HLS.RESUME_DOWNLOAD">false</boolProp>
+        </com.blazemeter.jmeter.hls.logic.HlsSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Low - Media Playlist " enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1313075577">#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-ALLOW-CACHE:YES
+#EXT-X-TARGETDURATION:13
+#EXTINF:12.046444,
+about_demo_hls_600k00000.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00001.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00002.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00003.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00004.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00005.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00006.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00007.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00008.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00009.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00010.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00011.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00012.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00013.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00014.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00015.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00016.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00017.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00018.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00019.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00020.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00021.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00022.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00023.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00024.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00025.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00026.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00027.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00028.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00029.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00030.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00031.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00032.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00033.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00034.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00035.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00036.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00037.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00038.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00039.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00040.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00041.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00042.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00043.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00044.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00045.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00046.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00047.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00048.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00049.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00050.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00051.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00052.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00053.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00054.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00055.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00056.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00057.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00058.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00059.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00060.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00061.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00062.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00063.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00064.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00065.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00066.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00067.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00068.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00069.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00070.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00071.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00072.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00073.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00074.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00075.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00076.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00077.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00078.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00079.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00080.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00081.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00082.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00083.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00084.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00085.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00086.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00087.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00088.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00089.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00090.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00091.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00092.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00093.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00094.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00095.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00096.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00097.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00098.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00099.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00100.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00101.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00102.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00103.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00104.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00105.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00106.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00107.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00108.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00109.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00110.ts
+#EXTINF:10.133333,
+about_demo_hls_600k00111.ts
+#EXT-X-ENDLIST
+</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Low - Media Segment " enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1683737498">GET https://hls.demoblaze.com/about_demo_hls_600k</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.request_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+          <collectionProp name="Asserion.test_strings"/>
+          <stringProp name="Assertion.custom_message"></stringProp>
+          <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">16</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Mixed" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">2</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">400</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.blazemeter.jmeter.hls.logic.HlsSampler guiclass="com.blazemeter.jmeter.hls.gui.HlsSamplerGui" testclass="com.blazemeter.jmeter.hls.logic.HlsSampler" testname="Mixed - Sampler" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HLS.URL_DATA">https://hls.demoblaze.com/index.m3u8</stringProp>
+          <boolProp name="HLS.DURATION">true</boolProp>
+          <stringProp name="HLS.SECONDS_DATA">10</stringProp>
+          <stringProp name="HLS.AUDIO_LANGUAGE"></stringProp>
+          <stringProp name="HLS.SUBTITLE_LANGUAGE"></stringProp>
+          <stringProp name="HLS.BANDWIDTH_TYPE">minBandwidth</stringProp>
+          <stringProp name="HLS.NET_DATA"></stringProp>
+          <stringProp name="HLS.RESOLUTION_TYPE">maxResolution</stringProp>
+          <stringProp name="HLS.RES_DATA"></stringProp>
+          <boolProp name="HLS.RESUME_DOWNLOAD">false</boolProp>
+        </com.blazemeter.jmeter.hls.logic.HlsSampler>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Mixed Assertion - Media Playlist" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1313075577">#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-ALLOW-CACHE:YES
+#EXT-X-TARGETDURATION:13
+#EXTINF:12.046444,
+about_demo_hls_600k00000.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00001.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00002.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00003.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00004.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00005.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00006.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00007.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00008.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00009.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00010.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00011.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00012.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00013.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00014.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00015.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00016.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00017.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00018.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00019.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00020.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00021.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00022.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00023.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00024.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00025.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00026.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00027.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00028.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00029.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00030.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00031.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00032.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00033.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00034.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00035.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00036.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00037.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00038.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00039.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00040.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00041.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00042.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00043.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00044.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00045.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00046.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00047.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00048.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00049.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00050.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00051.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00052.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00053.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00054.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00055.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00056.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00057.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00058.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00059.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00060.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00061.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00062.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00063.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00064.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00065.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00066.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00067.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00068.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00069.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00070.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00071.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00072.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00073.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00074.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00075.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00076.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00077.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00078.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00079.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00080.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00081.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00082.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00083.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00084.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00085.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00086.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00087.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00088.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00089.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00090.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00091.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00092.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00093.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00094.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00095.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00096.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00097.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00098.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00099.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00100.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00101.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00102.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00103.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00104.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00105.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00106.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00107.ts
+#EXTINF:12.000000,
+about_demo_hls_600k00108.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00109.ts
+#EXTINF:9.000000,
+about_demo_hls_600k00110.ts
+#EXTINF:10.133333,
+about_demo_hls_600k00111.ts
+#EXT-X-ENDLIST
+</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Mixed Assertion - Media Segment" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1683737498">GET https://hls.demoblaze.com/about_demo_hls_600k</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.request_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+          <collectionProp name="Asserion.test_strings"/>
+          <stringProp name="Assertion.custom_message"></stringProp>
+          <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">16</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+      </hashTree>
+      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="All - Master Playlist" enabled="true">
+        <collectionProp name="Asserion.test_strings">
+          <stringProp name="1373173979">#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=8674000,RESOLUTION=1024x576,CODECS=&quot;avc1.4d001f,mp4a.40.2&quot;
+about_demo_hls_2M.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=7633000,RESOLUTION=960x540,CODECS=&quot;avc1.4d001f,mp4a.40.2&quot;
+about_demo_hls_1-5M.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3733000,RESOLUTION=640x360,CODECS=&quot;avc1.4d001f,mp4a.40.2&quot;
+about_demo_hls_1M.m3u8
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=2624000,RESOLUTION=480x270,CODECS=&quot;avc1.42001e,mp4a.40.2&quot;
+about_demo_hls_600k.m3u8</stringProp>
+        </collectionProp>
+        <stringProp name="Assertion.custom_message"></stringProp>
+        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+        <boolProp name="Assertion.assume_success">false</boolProp>
+        <intProp name="Assertion.test_type">2</intProp>
+      </ResponseAssertion>
+      <hashTree/>
+      <ResultCollector guiclass="AssertionVisualizer" testclass="ResultCollector" testname="Assertion Results" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
